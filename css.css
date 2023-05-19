@@ -1,0 +1,17 @@
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+.employee {
+  margin-bottom: 20px;
+}
+.employee-header {
+  font-weight: bold;
+}
+.project {
+  margin-left: 20px;
+}
+.task {
+  margin-left: 40px;
+}
