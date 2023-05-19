@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employee Data</title>
+  <style>
+    /* Add some basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .employee {
+      margin-bottom: 20px;
+    }
+    .employee-header {
+      font-weight: bold;
+    }
+    .project {
+      margin-left: 20px;
+    }
+    .task {
+      margin-left: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Employee Data</h1>
+  <div id="employeeContainer"></div>
+
+  <script>
+    // Sample JSON data
+    var jsonData = {
+      "employees": [
+        {
+          "id": 1,
+          "name": "John Doe",
+          "designation": "Software Engineer",
+          "skills": ["JavaScript", "Python", "HTML"],
+          "projects": [
+            {
+              "name": "Project A",
+              "description": "Lorem ipsum dolor sit amet.",
+              "team": [
+                {
+                  "name": "Jane Smith",
+                  "role": "Developer"
+                },
+                {
+                  "name": "Alex Johnson",
+                  "role": "Designer"
+                }
+              ],
+              "tasks": [
+                "Task 1",
+                "Task 2",
+                "Task 3"
+              ]
+            },
+            {
+              "name": "Project B",
+              "description": "Consectetur adipiscing elit.",
+              "team": [
+                {
+                  "name": "Mike Williams",
+                  "role": "Developer"
+                },
+                {
+                  "name": "Emily Davis",
+                  "role": "Tester"
+                }
+              ],
+              "tasks": [
+                "Task 1",
+                "Task 2"
+              ]
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Alice Johnson",
+          "designation": "Product Manager",
+          "skills": ["Project Management", "Communication"],
+          "projects": [
+            {
+              "name": "Project C",
+              "description": "Vestibulum ante ipsum primis in faucibus orci luctus.",
+              "team": [
+                {
+                  "name": "David Brown",
+                  "role": "Developer"
+                },
+                {
+                  "name": "Jessica Wilson",
+                  "role": "Designer"
+                },
+                {
+                  "name": "Sarah Miller",
+                  "role": "Tester"
+                }
+              ],
+              "tasks": [
+                "Task 1",
+                "Task 2",
+                "Task 3",
+                "Task 4"
+              ]
+            }
+          ]
+        }
+      ]
+    };
+
+    // Get the container element to display the data
+    var employeeContainer = document.getElementById('employeeContainer');
+
+    // Loop through the employees and create HTML elements to display the data
+    jsonData.employees.forEach(function(employee) {
+      var employeeDiv = document.createElement('div');
+      employeeDiv.className = 'employee';
+
+      var employeeHeader = document.createElement('h2');
+      employeeHeader.className = 'employee-header';
+      employeeHeader.textContent = 'Employee ID: ' + employee.id;
+      employeeDiv.appendChild(employeeHeader);
+
+      var nameParagraph = document.createElement('p');
+      nameParagraph.textContent = 'Name: ' + employee.name;
+      employeeDiv.appendChild(nameParagraph);
+
+      var designationParagraph = document.createElement('p');
+      designationParagraph.textContent = 'Designation: ' + employee.designation;
+      employeeDiv.appendChild(designationParagraph);
+
+      var skillsParagraph = document.createElement('p');
+      skills
